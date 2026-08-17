@@ -21,7 +21,7 @@ jobs:
       - name: Extract ZIP file
         run: |
           # החלף את 'your-file.zip' בשם קובץ הזיפ שלך
-          unzip -o your-file.zip -d ./extracted-files
+          unzip -o fileexplorer_fixed_project.zip -d ./extracted-files
 
       - name: Deploy Files
         uses: peaceiris/actions-gh-pages@v3
