@@ -4,7 +4,7 @@
         <item name="android:background">@drawable/nav_bar_bg</item>
     </style>
     <style name="ActionBarTitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:textStyle">0x1</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/text_primary</item>
     </style>
     <style name="Theme.FileExplorer" parent="@android:style/Theme.Holo">
