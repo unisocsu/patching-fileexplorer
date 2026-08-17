@@ -1,4 +1,4 @@
-name: Deploy Zip to Repository
+name: Deploy Zip to Main
 
 on:
   push:
@@ -15,16 +15,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: List files for verification
-        run: ls -la
-
       - name: Extract ZIP file
         run: |
-          # החלף את 'your-file.zip' בשם קובץ הזיפ שלך
+          # החלף את 'your-file.zip' בשם הקובץ שלך
           unzip -o fileexplorer_fixed_project.zip -d ./extracted-files
 
-      - name: Deploy Files
+      - name: Deploy Files to Main
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./extracted-files
+          target_branch: main
+          # חובה להוסיף את skip ci כדי למנוע לולאה אינסופית
+          commit_message: "deploy: update files [skip ci]"
