@@ -19,9 +19,12 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        # יש לעדכן את הנתיב כאן אם קובץ ה-package.json נמצא בתיקייה משנית, למשל: ./my-app
+        working-directory: .
 
       - name: Build Project
         run: npm run build
+        working-directory: .
 
       - name: Deploy Files
         uses: peaceiris/actions-gh-pages@v3
