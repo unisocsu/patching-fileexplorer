@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.FileExplorer" parent="@android:style/Theme.Holo">
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:textColorHighlight">#55e94560</item>
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:editTextColor">@color/text_primary</item>
+        <item name="android:colorPressedHighlight">#33e94560</item>
+        <item name="android:colorFocusedHighlight">#33e94560</item>
+        <item name="android:colorActivatedHighlight">#33e94560</item>
+    </style>
+</resources>

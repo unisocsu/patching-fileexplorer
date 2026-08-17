@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/nav_bar_bg</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+    </style>
+    <style name="Theme.FileExplorer" parent="@android:style/Theme.Holo">
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:textColorHighlight">#55e94560</item>
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:editTextColor">@color/text_primary</item>
+    </style>
+</resources>

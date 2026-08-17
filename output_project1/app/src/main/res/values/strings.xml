@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">סייר קבצים</string>
+    <string name="cancel">ביטול</string>
+    <string name="copy">העתק</string>
+    <string name="create_folder">תיקייה חדשה</string>
+    <string name="cut">גזור</string>
+    <string name="delete">מחק</string>
+    <string name="delete_confirm">האם למחוק?</string>
+    <string name="details">פרטים</string>
+    <string name="empty_folder">תיקייה ריקה</string>
+    <string name="folder_name">שם תיקייה</string>
+    <string name="new_name">שם חדש</string>
+    <string name="open_error">לא ניתן לפתוח קובץ זה</string>
+    <string name="paste">הדבק</string>
+    <string name="permission_required">נדרשת הרשאת גישה לקבצים</string>
+    <string name="provider_authority">com.fileexplorer.provider</string>
+    <string name="rename">שנה שם</string>
+    <string name="search_hint">חיפוש קבצים…</string>
+    <string name="yes">כן</string>
+</resources>

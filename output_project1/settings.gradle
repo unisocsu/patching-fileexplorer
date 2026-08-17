@@ -1,0 +1,3 @@
+rootProject.name = 'סייר קבצים'
+
+include 'app'
