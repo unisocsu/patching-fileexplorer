@@ -1,4 +1,4 @@
-name: Build Android APK from Current Branch
+name: Build Android Project
 
 on:
   push:
@@ -8,28 +8,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
           java-version: '17'
+          distribution: 'temurin'
 
-      - name: Install Modern Gradle (8.5)
-        run: |
-          wget https://services.gradle.org/distributions/gradle-8.5-bin.zip
-          unzip -q gradle-8.5-bin.zip
-          echo "$PWD/gradle-8.5/bin" >> $GITHUB_PATH
-
-      - name: Generate Gradle Wrapper
-        run: gradle wrapper --gradle-version 8.5
-        working-directory: output_project1
-
-      - name: Make Gradlew Executable
+      - name: Grant Permission for gradlew
         run: chmod +x gradlew
         working-directory: output_project1
 
@@ -37,8 +26,8 @@ jobs:
         run: ./gradlew assembleDebug
         working-directory: output_project1
 
-      - name: Upload APK Artifact
+      - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: app-debug-apk
+          name: debug-apk
           path: output_project1/app/build/outputs/apk/debug/app-debug.apk
