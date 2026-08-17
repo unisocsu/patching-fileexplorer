@@ -28,15 +28,18 @@ jobs:
 
       - name: Generate Gradle Wrapper
         run: gradle wrapper --gradle-version 8.5
+        working-directory: output_project1
 
       - name: Make Gradlew Executable
         run: chmod +x gradlew
+        working-directory: output_project1
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug
+        working-directory: output_project1
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: output_project1/app/build/outputs/apk/debug/app-debug.apk
