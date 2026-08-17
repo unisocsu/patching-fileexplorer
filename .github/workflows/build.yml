@@ -18,6 +18,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Install Modern Gradle (8.5)
+        run: |
+          wget https://services.gradle.org/distributions/gradle-8.5-bin.zip
+          unzip -q gradle-8.5-bin.zip
+          echo "$PWD/gradle-8.5/bin" >> $GITHUB_PATH
+
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.5
+        working-directory: output_project1
+
       - name: Grant Permission for gradlew
         run: chmod +x gradlew
         working-directory: output_project1
