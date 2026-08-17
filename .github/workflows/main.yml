@@ -1,10 +1,9 @@
-name: Build Android APK
+name: Build Android APK from Current Branch
 
 on:
   push:
     branches:
-      - main
-      - dev
+      - gh-pages
 
 jobs:
   build:
