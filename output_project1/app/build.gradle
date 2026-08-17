@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-	namespace "com.fileexplorer"
+    namespace "com.fileexplorer"
     compileSdkVersion 34
 
     defaultConfig {
@@ -35,6 +35,13 @@ android {
 
     buildFeatures {
         buildConfig = false
+    }
+
+    // החרמת תיקיית קוטלין מקומפילציית ה-Java
+    sourceSets {
+        main {
+            java.exclude 'kotlin/**'
+        }
     }
 }
 
