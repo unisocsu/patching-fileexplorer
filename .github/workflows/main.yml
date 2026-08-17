@@ -1,30 +1,36 @@
-name: Deploy Zip to Main
+name: Build Android APK
 
 on:
   push:
     branches:
       - main
-
-permissions:
-  contents: write
+      - dev
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Extract ZIP file
-        run: |
-          # החלף את 'your-file.zip' בשם הקובץ שלך
-          unzip -o fileexplorer_fixed_project.zip -d ./extracted-files
-
-      - name: Deploy Files to Main
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./extracted-files
-          target_branch: main
-          # חובה להוסיף את skip ci כדי למנוע לולאה אינסופית
-          commit_message: "deploy: update files [skip ci]"
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Make Gradlew Executable
+        run: chmod +x gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
